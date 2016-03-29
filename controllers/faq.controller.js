@@ -3,8 +3,6 @@ var Faq = require('../models/faq.model.js');
 exports.getFAQ = function (req, res) {
 	var query = {};
 
-	console.log(Faq);
-
 	Faq.find(query)
 		.sort({
 			'questionNum': 1
