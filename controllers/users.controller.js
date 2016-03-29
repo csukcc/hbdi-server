@@ -25,8 +25,8 @@ exports.getUserById = function (req, res) {
 
 exports.getUsers = function (req, res) {
 	var query = {};
-	var limit = 20;
-	var skip = 0;
+	var limit = req.query.limit || 20;
+	var skip = req.query.skip || 0;
 
 	Users.find(query)
 		.limit(limit)

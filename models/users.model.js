@@ -159,7 +159,7 @@ var usersModel = new Schema({
 		type: {
 			type: String,
 			required: [true, 'Company Role Type is missing'],
-			enum: ['Associate', 'Associate Analyst', 'Associate Developer', 'Analyst', 'Developer', 'Group Ops']
+			enum: ['Associate', 'Associate Analyst', 'Associate Developer', 'Analyst', 'Developer', 'Group Ops', 'Squad Lead', 'Other']
 		},
 	  squad: {
 	    type: String,

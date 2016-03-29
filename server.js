@@ -36,7 +36,7 @@ app.get('/', function (req, res) {
 });
 
 app.listen(port, function () {
-	console.log('Gulp is running on PORT: ' + port);
+	console.log('Server is running on PORT: ' + port);
 });
 
 module.exports = app;
