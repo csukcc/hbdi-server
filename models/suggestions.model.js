@@ -4,7 +4,7 @@ var Schema = mongoose.Schema;
 var suggestionsModel = new Schema({
 	from: {
     type: String,
-    required: true,
+    required: [true, 'Suggestion FROM Quadrant(s) is missing'],
     validate: [
       function(From) {
         return From.length > 0;
@@ -14,7 +14,7 @@ var suggestionsModel = new Schema({
   },
   to: {
     type: String,
-    required: true,
+    required: [true, 'Suggestion TO Quadrant(s) is missing'],
     validate: [
       function(to) {
         return to.length > 0;
@@ -24,7 +24,7 @@ var suggestionsModel = new Schema({
   },
   decription: {
     type: String,
-    required: true,
+    required: [true, 'Suggestion Description is missing'],
     validate: [
       function(decription) {
         return decription.length > 0;

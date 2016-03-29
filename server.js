@@ -2,8 +2,10 @@ var express = require('express');
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 
-var routes = require('./routes/index');
-var users = require('./routes/users');
+var routes = require('./routes/index.routes');
+var users = require('./routes/users.routes');
+var faq = require('./routes/faq.routes');
+var suggestions = require('./routes/suggestions.routes');
 
 var db;
 
@@ -22,6 +24,8 @@ app.use(bodyParser.json());
 // API request forwards
 app.use('/api/', routes);
 app.use('/api/users', users);
+app.use('/api/faq', faq);
+app.use('/api/suggestions', suggestions);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

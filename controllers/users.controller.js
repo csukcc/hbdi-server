@@ -29,6 +29,7 @@ exports.getUsers = function (req, res) {
 	var skip = req.query.skip || 0;
 
 	Users.find(query)
+		.where('active').equals(true)
 		.limit(limit)
 		.skip(skip)
 		.sort({

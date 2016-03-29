@@ -4,7 +4,7 @@ var Schema = mongoose.Schema;
 var faqModel = new Schema({
 	questionNum: {
     type: Number,
-    required: true,
+    required: [true, 'Question Number is missing'],
 		validate: [
       function(questionNum) {
         return questionNum > 0;
@@ -14,24 +14,12 @@ var faqModel = new Schema({
   },
   title: {
     type: String,
-    required: true,
-		validate: [
-      function(title) {
-        return title.length > 1;
-      },
-      'Title should be more than 1 character'
-    ]
+    required: [true, 'Title is missing']
   },
   description: {
     type: String,
-    required: true,
-		validate: [
-      function(description) {
-        return description.length > 1;
-      },
-      'Title should be more than 1 character'
-    ]
+    required: [true, 'Description is missing']
   }
-});
+}, { collection: 'faq' });
 
 module.exports = mongoose.model('FAQ', faqModel);
